@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-02-26T16:04:09" hostname="Vasangis-MacBook-Pro.local" time="0.917">
+  <properties/>
+  <testcase name=" test to create a member using mockk object()" classname="com.example.AppTest" time="0.902"/>
+  <testcase name="Should throw error for adding response for a member which does not exists in a system()" classname="com.example.AppTest" time="0.008"/>
+  <testcase name="Member should not be added to the memory if member already exists in memory()" classname="com.example.AppTest" time="0.0"/>
+  <testcase name="Should save the response of the member()" classname="com.example.AppTest" time="0.001"/>
+  <testcase name="Member Data should be saved in memory()" classname="com.example.AppTest" time="0.001"/>
+  <testcase name="test to create a Member()" classname="com.example.AppTest" time="0.001"/>
+  <system-out><![CDATA[?[36m21:34:09.310?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
+[Member(id=1, name=Vyankatesh)]
+[Member(id=1, name=Vyankatesh)]
+[Member(id=1, name=Vyankatesh)]
+[Member(id=1, name=John Doe)]
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/vasangik/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.6/46e2545d7a97b6ccb195621650c5957279eb4812/byte-buddy-agent-1.14.6.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

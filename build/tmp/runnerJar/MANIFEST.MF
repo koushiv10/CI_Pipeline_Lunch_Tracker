@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Class-Path: resources/ classes/ libs/micronaut-data-hibernate-jpa-4.6.1.
+ jar libs/micronaut-data-jdbc-4.6.1.jar libs/micronaut-kotlin-runtime-4.
+ 2.0.jar libs/micronaut-serde-jackson-2.8.1.jar libs/micronaut-jdbc-hika
+ ri-5.5.1.jar libs/micronaut-hibernate-jpa-5.5.1.jar libs/micronaut-data
+ -tx-hibernate-4.6.1.jar libs/micronaut-data-tx-jdbc-4.6.1.jar libs/micr
+ onaut-data-connection-jdbc-4.6.1.jar libs/micronaut-jdbc-5.5.1.jar libs
+ /micronaut-data-jpa-4.6.1.jar libs/micronaut-data-runtime-4.6.1.jar lib
+ s/micronaut-data-model-4.6.1.jar libs/micronaut-reactor-3.2.1.jar libs/
+ micronaut-serde-support-2.8.1.jar libs/micronaut-serde-api-2.8.1.jar li
+ bs/micronaut-data-tx-4.6.1.jar libs/micronaut-data-connection-hibernate
+ -4.6.1.jar libs/micronaut-data-connection-4.6.1.jar libs/micronaut-http
+ -server-netty-4.3.6.jar libs/micronaut-http-netty-4.3.6.jar libs/micron
+ aut-jackson-core-4.3.6.jar libs/micronaut-json-core-4.3.6.jar libs/micr
+ onaut-http-server-4.3.6.jar libs/micronaut-router-4.3.6.jar libs/micron
+ aut-http-4.3.6.jar libs/micronaut-context-propagation-4.3.6.jar libs/mi
+ cronaut-context-4.3.6.jar libs/micronaut-buffer-netty-4.3.6.jar libs/mi
+ cronaut-aop-4.3.6.jar libs/micronaut-inject-4.3.6.jar libs/jackson-data
+ bind-2.16.1.jar libs/jackson-annotations-2.16.1.jar libs/jackson-core-2
+ .16.1.jar libs/jackson-module-kotlin-2.16.1.jar libs/kotlin-reflect-1.9
+ .22.jar libs/kotlin-stdlib-jdk7-1.9.22.jar libs/kotlin-stdlib-1.9.22.ja
+ r libs/kotlin-stdlib-jdk8-1.9.22.jar libs/javax.persistence-api-2.2.jar
+  libs/logback-classic-1.4.14.jar libs/postgresql-42.7.1.jar libs/Hikari
+ CP-5.1.0.jar libs/jakarta.annotation-api-2.1.1.jar libs/netty-codec-htt
+ p2-4.1.107.Final.jar libs/netty-codec-http-4.1.107.Final.jar libs/netty
+ -handler-4.1.107.Final.jar libs/netty-codec-4.1.107.Final.jar libs/nett
+ y-transport-native-unix-common-4.1.107.Final.jar libs/netty-transport-4
+ .1.107.Final.jar libs/netty-buffer-4.1.107.Final.jar libs/netty-resolve
+ r-4.1.107.Final.jar libs/netty-common-4.1.107.Final.jar libs/reactor-co
+ re-3.6.1.jar libs/micronaut-core-reactive-4.3.6.jar libs/reactive-strea
+ ms-1.0.4.jar libs/micronaut-core-4.3.6.jar libs/hibernate-core-6.4.4.Fi
+ nal.jar libs/jakarta.persistence-api-3.1.0.jar libs/jakarta.transaction
+ -api-2.0.1.jar libs/logback-core-1.4.14.jar libs/slf4j-api-2.0.12.jar l
+ ibs/annotations-13.0.jar libs/jakarta.inject-api-2.0.1.jar libs/config-
+ 1.4.3.jar libs/checker-qual-3.41.0.jar libs/jboss-logging-3.5.0.Final.j
+ ar libs/hibernate-commons-annotations-6.0.6.Final.jar libs/jandex-3.1.2
+ .jar libs/classmate-1.5.1.jar libs/byte-buddy-1.14.11.jar libs/jaxb-run
+ time-4.0.2.jar libs/jaxb-core-4.0.2.jar libs/jakarta.xml.bind-api-4.0.0
+ .jar libs/antlr4-runtime-4.13.0.jar libs/angus-activation-2.0.0.jar lib
+ s/jakarta.activation-api-2.1.1.jar libs/txw2-4.0.2.jar libs/istack-comm
+ ons-runtime-4.1.1.jar
+Main-Class: com.example.ApplicationKt
+
