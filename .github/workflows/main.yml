@@ -32,7 +32,7 @@ jobs:
     - name: Build with Maven
       env:
           WEB_APP_URL: "http://3.95.147.121/uat/"
-      run: ./gradlew build
+      run: ls -al
   deploy-to-prod:
     needs: bdd
     runs-on: ubuntu-latest
