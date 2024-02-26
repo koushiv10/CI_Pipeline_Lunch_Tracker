@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #F2F2F2;
+            font-weight: bold;
+        }
+        .total {
+            font-size:30px;
+            margin-top: 20px;
+        }
+        .date {
+            font-size:22px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        let today = new Date().toLocaleDateString();
+        let count = 0;
+        document.getElementById("date").innerHTML = today;
+
+        fetch("http://localhost:8080/api/admin", {
+            method: "GET",
+        })
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+        })
+        .then(posts => {
+            const tbody = document.querySelector("#dataTable tbody");
+
+            posts.forEach(post => {
+                count++;
+                const newRow = tbody.insertRow();
+                const cell1 = newRow.insertCell();
+                const cell2 = newRow.insertCell();
+                cell1.textContent = post.id;
+                cell2.textContent = post.name;
+            });
+            document.getElementById("employeeCount").textContent = count;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    </script>
+</head>
+<body>
+<header>
+    <h1>Employee List</h1>
+</header>
+<div class="container">
+    <div class="date">
+        <p>Date: <span id="date"></span></p>
+    </div>
+    <div class="total">
+        <p>Total Employees: <span id="employeeCount">2</span></p>
+    </div>
+
+    <table id = "dataTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
