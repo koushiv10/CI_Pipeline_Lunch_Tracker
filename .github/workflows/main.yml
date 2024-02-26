@@ -65,8 +65,8 @@ jobs:
         aws-region: ap-south-1
         
     - name: Login to Amazon ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
+      id: gurukul2024
+      uses: aws-actions/amazon-ecr-login@v3
 
     - name: Build, tag, and push the image to Amazon ECR
       id: build-image
