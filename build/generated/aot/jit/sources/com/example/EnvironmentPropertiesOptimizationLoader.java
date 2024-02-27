@@ -13,7 +13,6 @@ public class EnvironmentPropertiesOptimizationLoader implements StaticOptimizati
   private void load0(Map<String, List<String>> env) {
     env.put("PATH", Arrays.asList("path"));
     env.put("MANPATH", Arrays.asList("manpath"));
-    env.put("JAVA_HOME", Arrays.asList("java.home", "java-home"));
     env.put("TERM", Arrays.asList("term"));
     env.put("HOMEBREW_PREFIX", Arrays.asList("homebrew.prefix", "homebrew-prefix"));
     env.put("COMMAND_MODE", Arrays.asList("command.mode", "command-mode"));

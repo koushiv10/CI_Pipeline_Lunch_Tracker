@@ -1,0 +1,7 @@
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method: test to create a member using mockk object()]
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method:Should throw error for adding response for a member which does not exists in a system()]
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method:Member should not be added to the memory if member already exists in memory()]
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method:Should save the response of the member()]
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method:Member Data should be saved in memory()]
+[engine:junit-jupiter]/[class:com.example.AppTest]/[method:test to create a Member()]
+[engine:junit-jupiter]/[class:com.example.BackendTest]/[method:testItWorks()]

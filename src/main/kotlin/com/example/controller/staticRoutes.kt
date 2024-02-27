@@ -11,7 +11,7 @@ import java.io.FileReader
 class loginPage {
     @Get(produces = [MediaType.TEXT_HTML])
     fun displayLogin(): MutableHttpResponse<String>? {
-        var content = FileReader("/Users/sujithav/Desktop/team5-lunch-tracker/webapp/src/main/resources/index.html").readText()
+        var content = FileReader("/Users/vasangik/Desktop/CI_Pipeline_Lunch_Tracker/src/main/resources/index.html").readText()
         return HttpResponse.ok(content);
     }
 }
@@ -20,7 +20,7 @@ class loginPage {
 class memberPage {
     @Get(produces = [MediaType.TEXT_HTML])
     fun displayLogin(): MutableHttpResponse<String>? {
-        var content = FileReader("/Users/sujithav/Desktop/team5-lunch-tracker/webapp/src/main/resources/member.html").readText()
+        var content = FileReader("/Users/vasangik/Desktop/CI_Pipeline_Lunch_Tracker/src/main/resources/member.html").readText()
         return HttpResponse.ok(content);
     }
 }
