@@ -29,7 +29,7 @@ class memberPage {
 class adminPage {
     @Get(produces = [MediaType.TEXT_HTML])
     fun displayLogin(): MutableHttpResponse<String>? {
-        var content = FileReader("/Users/sujithav/Desktop/team5-lunch-tracker/webapp/src/main/resources/admin.html").readText()
+        var content = FileReader("/Users/vasangik/Desktop/CI_Pipeline_Lunch_Tracker/src/main/resources/admin.html").readText()
         return HttpResponse.ok(content);
     }
 }

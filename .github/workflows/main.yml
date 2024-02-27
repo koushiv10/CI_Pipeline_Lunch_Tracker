@@ -48,39 +48,55 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build -x test
 
+  artifact:
+      needs: [ build ]
+      runs-on: self-hosted
+      permissions:
+        contents: read
+      steps:
+        - name: Download Docker image artifact
+          uses: actions/download-artifact@v2
+          with:
+            name: docker-image
+            path: /tmp/docker-image
+        - name: Save Docker image to artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: my-artifact
+            path: /tmp/docker-image
       
-  deploy:
-    needs: build
-    name: Deploy
-    runs-on: self-hosted
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY}}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-        aws-region: ap-south-1
-        
-    - name: Login to Amazon ECR
-      id: gurukul2024
-      uses: aws-actions/amazon-ecr-login@v2
-
-    - name: Build, tag, and push the image to Amazon ECR
-      id: build-image
-      env:
-        ECR_REGISTRY: ${{ steps.gurukul2024.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
-        IMAGE_TAG: ${{ github.sha }}
-      run: |
-        # Build a docker container and push it to ECR 
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        echo "Pushing image to ECR..."
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+#  deploy:
+#    needs: build
+#    name: Deploy
+#    runs-on: self-hosted
+#
+#    steps:
+#    - name: Checkout
+#      uses: actions/checkout@v2
+#
+#    - name: Configure AWS credentials
+#      uses: aws-actions/configure-aws-credentials@v4
+#      with:
+#        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY}}
+#        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+#        aws-region: ap-south-1
+#
+#    - name: Login to Amazon ECR
+#      id: gurukul2024
+#      uses: aws-actions/amazon-ecr-login@v2
+#
+#    - name: Build, tag, and push the image to Amazon ECR
+#      id: build-image
+#      env:
+#        ECR_REGISTRY: ${{ steps.gurukul2024.outputs.registry }}
+#        ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
+#        IMAGE_TAG: ${{ github.sha }}
+#      run: |
+#        # Build a docker container and push it to ECR
+#        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+#        echo "Pushing image to ECR..."
+#        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+#        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
